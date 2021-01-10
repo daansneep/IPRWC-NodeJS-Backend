@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const indexRouter = require('./routes/index');
+const profileRoutes = require('./routes/profileRoutes');
+const webshopRoutes = require('./routes/webshopRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -15,7 +17,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', indexRouter);
+app.use('/profile', profileRoutes);
+app.use('/webshop', webshopRoutes);
+app.use('/auth', authRoutes);
 
 app.listen(8080);
 console.log("Server started, listening on port 8080")

@@ -19,29 +19,71 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b3d9d77-143c-418a-8ed1-4eca2519dc3a" name="Default Changelist" comment="" />
+    <list default="true" id="3b3d9d77-143c-418a-8ed1-4eca2519dc3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/profileController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/webshopController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/authDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/profileDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/webshopDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/GCS_DB_init_PSQL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/is-auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/authRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/profileRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/webshopRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IPRWC-NodeJS-Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IPRWC-NodeJS-Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lw9P636hB8f6DxnbvDwzeUwfsf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.9" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ARAG/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Github-Workspace\IPRWC-NodeJS-Backend\database" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,7 +93,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608497259028</updated>
-      <workItem from="1608497260081" duration="1441000" />
+      <workItem from="1608497260081" duration="2039000" />
+      <workItem from="1608580754794" duration="3609000" />
+      <workItem from="1610317274272" duration="3104000" />
     </task>
     <servers />
   </component>
@@ -68,35 +112,51 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608497504350">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608581013364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608497504350" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608497439304">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608581013364" />
+    <state x="230" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608583808760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608497439304" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608497514392">
+    <state x="230" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608583808760" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608581165938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608497514392" />
-    <state width="916" height="282" key="GridCell.Tab.0.bottom" timestamp="1608498324678">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608581165938" />
+    <state x="227" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608580816341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608498324678" />
-    <state width="916" height="282" key="GridCell.Tab.0.center" timestamp="1608498324678">
+    <state x="227" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608580816341" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608580768290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608498324678" />
-    <state width="916" height="282" key="GridCell.Tab.0.left" timestamp="1608498324678">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608580768290" />
+    <state width="916" height="282" key="GridCell.Tab.0.bottom" timestamp="1608503586454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608498324678" />
-    <state width="916" height="282" key="GridCell.Tab.0.right" timestamp="1608498324678">
+    <state width="916" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608503586454" />
+    <state width="916" height="282" key="GridCell.Tab.0.center" timestamp="1608503586454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="916" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608498324678" />
+    <state width="916" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608503586454" />
+    <state width="916" height="282" key="GridCell.Tab.0.left" timestamp="1608503586454">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608503586454" />
+    <state width="916" height="282" key="GridCell.Tab.0.right" timestamp="1608503586454">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1608503586454" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1610320343663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040/-1920.1.1920.1040@0.0.1920.1040" timestamp="1610320343663" />
   </component>
 </project>
