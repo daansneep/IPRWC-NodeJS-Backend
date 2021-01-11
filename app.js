@@ -17,9 +17,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/profile', profileRoutes);
+// app.use('/profile', profileRoutes);
 app.use('/webshop', webshopRoutes);
-app.use('/auth', authRoutes);
+// app.use('/auth', authRoutes);
 
 app.listen(8080);
 console.log("Server started, listening on port 8080")
