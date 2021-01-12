@@ -84,7 +84,7 @@ exports.createProduct = (req, res, next) => {
     webshopDao.createProduct(req.body)
         .then((metadata) => {
             res.status(200).json({
-                id: metadata.rows[0].productnummer,
+                id: metadata.rows[0].productnumber,
                 message: 'Created product succesfully!'
             })
         })
@@ -100,7 +100,7 @@ exports.createCategory = (req, res, next) => {
     webshopDao.createCategory(req.body).metadata
         .then(metadata => {
             res.status(200).json({
-                id: metadata.rows[0].categorienummer,
+                id: metadata.rows[0].categorynumber,
                 message: 'Created category succesfully!'
             });
         })
@@ -128,9 +128,9 @@ exports.updateProduct = (req, res, next) => {
 };
 
 exports.updateCategory = (req, res, next) => {
-    webshopDao.getCategoryById(req.body.categorienummer)
-        .then(categorie => {
-            webshopDao.updateCategory(categorie.rows[0].categorienaam, req.body.categorienaam, req.body.categorienummer)
+    webshopDao.getCategoryById(req.body.categorynumber)
+        .then(category => {
+            webshopDao.updateCategory(category.rows[0].categoryname, req.body.categoryname, req.body.categorynumber)
                 .then(() => {
                     res.status(200).json({
                         message: 'Updated category succesfully!'
