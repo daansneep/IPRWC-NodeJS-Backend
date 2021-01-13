@@ -47,7 +47,7 @@ exports.login = (req, res, next) => {
 
     authDao.getAccountByEmail(email)
         .then(user => {
-            if (!user) {
+            if (user.rows.length < 1) {
                 const error = new Error('User with this email does not exist!');
                 error.statusCode = 401
                 throw error;
