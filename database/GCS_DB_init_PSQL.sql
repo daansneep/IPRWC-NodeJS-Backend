@@ -10,7 +10,8 @@ CREATE TABLE Account (
 	streetname TEXT,
 	housenumber INT,
 	addition TEXT,
-	city TEXT
+	city TEXT,
+    isAdmin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE Category (
