@@ -66,13 +66,12 @@ exports.login = (req, res, next) => {
                 isAdmin = true;
             }
 
-            const token = jwt.sign({email: userToLogin.email, isadmin: isAdmin}, 'Ur63UV5w99xpU1Sa9qjBx41co',
+            const token = jwt.sign({accountnumber: userToLogin.accountnumber}, 'Ur63UV5w99xpU1Sa9qjBx41co',
                 {expiresIn: '1h'});
 
             res.status(200).json({
                 message: 'User authorization is successful!',
                 token: token,
-                accountnumber: userToLogin.accountnumber,
                 email: userToLogin.email,
                 isadmin: isAdmin
             })
