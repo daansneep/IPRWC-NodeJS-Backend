@@ -62,7 +62,7 @@ exports.login = (req, res, next) => {
                 throw error;
             }
             let isAdmin = false;
-            if (userToLogin.isadmin) {
+            if (userToLogin.isadmin && req.path.includes('admin')) {
                 isAdmin = true;
             }
 
