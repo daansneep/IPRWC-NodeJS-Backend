@@ -83,3 +83,32 @@ exports.login = (req, res, next) => {
             next(err);
         });
 };
+exports.getUsers = (req, res, next) => {
+    authDao.getUsers()
+        .then(users => {
+            res.status(200).json({
+                message: 'Fetched users successfully!',
+                users: users.rows
+            })
+        })
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        });
+}
+exports.deleteUser = (req, res, next) => {
+    authDao.deleteUser(req.params.id)
+        .then(() => {
+            res.status(200).json({
+                message: 'User deleted successfully!'
+            })
+        })
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        })
+}

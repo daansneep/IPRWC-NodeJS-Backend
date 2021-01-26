@@ -11,7 +11,14 @@ module.exports = class AuthDAO {
     }
 
     static getIsAdmin(accountnumber) {
-        console.log('getting is admin')
         return db.query(`SELECT isadmin FROM account WHERE accountnumber = ${accountnumber};`)
+    }
+
+    static getUsers() {
+        return db.query(`SELECT accountnumber, email, isadmin FROM account;`);
+    }
+
+    static deleteUser(id) {
+        return db.query(`DELETE FROM account WHERE accountnumber = ${id};`)
     }
 }

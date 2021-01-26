@@ -5,6 +5,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
+router.get('/admin/users', isAuth, authController.getUsers)
+
 // POST /register
 // Register a regular user for purchasing
 router.post('/register', authController.register)
@@ -22,5 +24,6 @@ router.post('/login/admin', authController.login)
 router.post('/register/admin', isAuth, authController.register)
 
 
+router.delete('/admin/delete/:id', isAuth, authController.deleteUser)
 
 module.exports = router;
