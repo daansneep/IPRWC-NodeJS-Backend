@@ -35,3 +35,28 @@ CREATE TABLE Product (
 	CONSTRAINT fk_categorienummer
 		FOREIGN KEY (categorynumber) REFERENCES Category(categorynumber)
 );
+
+INSERT INTO category (categoryname) VALUES ('Alle producten');
+INSERT INTO category (categoryname, previousCategoryNumber)
+VALUES ('Elektronica', 1),
+       ('Extra', 1);
+
+INSERT INTO product (title, description, imagepath, categorynumber, purchaseprice, saleprice, stock, margin, showinwebshop)
+VALUES ('DELL XPS 9300', 'Een laptop van het merk Dell', 'path/to/image', 2, 1453.56, 1999.99, 3, 13, TRUE);
+
+INSERT INTO product (title, description, imagepath, categorynumber, purchaseprice, saleprice, stock, margin, showinwebshop)
+VALUES ('LENOVO X1 Carbon', 'Een laptop van het merk Lenovo', 'path/to/image', 2, 1246.56, 1999.99, 5, 6, TRUE);
+
+CREATE TABLE properties (
+    categorynumber INTEGER PRIMARY KEY,
+    properties TEXT[] NOT NULL,
+    CONSTRAINT fk_category
+        FOREIGN KEY(categorynumber) REFERENCES category(categorynumber)
+);
+
+CREATE TABLE product_properties (
+    productnumber INTEGER PRIMARY KEY,
+    properties TEXT[] NOT NULL,
+    CONSTRAINT fk_product
+        FOREIGN KEY(productnumber) REFERENCES product(productnumber)
+);

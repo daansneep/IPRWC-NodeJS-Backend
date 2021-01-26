@@ -24,36 +24,34 @@ module.exports = class WebshopDAO {
     static createProduct(body) {
         const { title, description, imagepath, categorynumber, purchaseprice, saleprice, stock, margin,
             showinwebshop } = body;
+        console.log(body);
 
-        return db.query(`INSERT INTO product VALUES (DEFAULT, '${title}', '${description}', '${imagepath}',
-                            ${categorynumber}, ${purchaseprice}, ${saleprice}, ${stock}, ${margin}, ${showinwebshop}) 
-                            RETURNING productnumber;`);
+        return db.query(`INSERT INTO product (productnumber, title, description, imagepath, categorynumber, 
+                     purchaseprice, saleprice, stock, margin, showinwebshop) VALUES (DEFAULT, '${title}', 
+                     '${description}', '${imagepath}', ${categorynumber}, ${purchaseprice}, ${saleprice}, ${stock}, 
+                                                                                     ${margin}, ${showinwebshop});`);
     }
 
     static createCategory(body) {
-        const { categoryname } = body;
+        const { categoryname, previouscategorynumber } = body;
 
-        return {
-            metadata: db.query(`INSERT INTO category VALUES (DEFAULT, '${categoryname}') RETURNING categorynumber;;`),
-            new_table: db.query(`CREATE TABLE ${categoryname}(productnumber INTEGER PRIMARY KEY);`)
-        };
+        return db.query(`INSERT INTO category VALUES (DEFAULT, '${categoryname}', ${previouscategorynumber}) 
+                RETURNING categorynumber;`);
     }
 
     static updateProduct(body) {
         const { productnumber, title, description, imagepath, categorynumber, purchaseprice, saleprice, stock, margin,
             showinwebshop } = body;
 
-        return db.query(`UPDATE product SET (title, description, imagepath, categorynumber, purchaseprice, 
-                     saleprice, stock, margin, showinwebshop) = ('${title}', '${description}',
-                     '${imagepath}', ${categorynumber}, ${purchaseprice}, ${saleprice}, ${stock}, 
-                     ${margin}, ${showinwebshop}) WHERE productnumber = ${productnumber};`);
+        return db.query(`UPDATE product SET title = '${title}', description = '${description}', 
+                 imagepath = '${imagepath}', categorynumber = ${categorynumber}, purchaseprice = ${purchaseprice}, 
+                 saleprice = ${saleprice}, stock = ${stock}, margin = ${margin}, showinwebshop = ${showinwebshop}
+                 WHERE productnumber = ${productnumber};`);
     }
 
-    static updateCategory(categoryname_old, categoryname, categorynumber) {
-        return db.query(`UPDATE category SET (categoryname) = ROW('${categoryname}') WHERE categorynumber = ${categorynumber};`)
-            .then(() => {
-                return db.query(`ALTER TABLE ${categoryname_old} RENAME TO ${categoryname};`);
-            });
+    static updateCategory(categoryname, categorynumber) {
+        return db.query(`UPDATE category SET (categoryname, previouscategorynubmer) = ROW('${categoryname}', 
+                '${previouscategorynubmer}') WHERE categorynumber = ${categorynumber};`);
     };
 
     static deleteProduct(productId) {
@@ -61,6 +59,6 @@ module.exports = class WebshopDAO {
     }
 
     static deleteCategory(categoryId) {
-        return db.query(`DELETE FROM category WHERE categorynumber=${categoryId}`)
+        return db.query(`DELETE FROM category WHERE categorynumber=${categoryId} CASCADE`)
     }
 }
