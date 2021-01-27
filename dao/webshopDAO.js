@@ -35,8 +35,7 @@ module.exports = class WebshopDAO {
     static createCategory(body) {
         const { categoryname, previouscategorynumber } = body;
 
-        return db.query(`INSERT INTO category VALUES (DEFAULT, '${categoryname}', ${previouscategorynumber}) 
-                RETURNING categorynumber;`);
+        return db.query(`INSERT INTO category VALUES (DEFAULT, '${categoryname}', ${previouscategorynumber});`);
     }
 
     static updateProduct(body) {
@@ -49,16 +48,16 @@ module.exports = class WebshopDAO {
                  WHERE productnumber = ${productnumber};`);
     }
 
-    static updateCategory(categoryname, categorynumber) {
-        return db.query(`UPDATE category SET (categoryname, previouscategorynubmer) = ROW('${categoryname}', 
-                '${previouscategorynubmer}') WHERE categorynumber = ${categorynumber};`);
+    static updateCategory(categoryname, previouscategorynumber) {
+        return db.query(`UPDATE category SET (categoryname, previouscategorynumber) = ROW('${categoryname}', 
+                ${previouscategorynumber}) WHERE categorynumber = ${categorynumber};`);
     };
 
     static deleteProduct(productId) {
-        return db.query(`DELETE FROM product WHERE productnumber=${productId}`);
+        return db.query(`DELETE FROM product WHERE productnumber=${productId};`);
     }
 
     static deleteCategory(categoryId) {
-        return db.query(`DELETE FROM category WHERE categorynumber=${categoryId} CASCADE`)
+        return db.query(`DELETE FROM category WHERE categorynumber=${categoryId};`)
     }
 }
