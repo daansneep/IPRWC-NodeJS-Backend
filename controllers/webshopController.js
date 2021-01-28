@@ -126,7 +126,7 @@ exports.updateProduct = (req, res, next) => {
 };
 
 exports.updateCategory = (req, res, next) => {
-    webshopDao.updateCategory(req.body.categoryname, res.body.previouscategorynumber)
+    webshopDao.updateCategory(req.body.categorynumber, req.body.categoryname, req.body.previouscategorynumber)
         .then(() => {
             res.status(200).json({
                 message: 'Updated category succesfully!'
@@ -158,7 +158,6 @@ exports.deleteProduct = (req, res, next) => {
 exports.deleteCategory = (req, res, next) => {
     webshopDao.getProductsFromCategory(req.params.id)
         .then(products => {
-            console.log(products.rows.length)
             if (products.rows.length < 1) {
 
                 webshopDao.deleteCategory(req.params.id)
